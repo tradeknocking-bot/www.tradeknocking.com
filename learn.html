@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade Knocking - Learning Dashboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* 🌈 Background Animation */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-align: center;
+      background: linear-gradient(270deg, #000814, #001d3d, #003566, #ffd60a);
+      background-size: 800% 800%;
+      animation: gradientMove 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-top: 50px;
+      color: #ffd60a;
+      text-shadow: 0 0 15px rgba(255, 214, 10, 0.6);
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #f1f1f1;
+      margin-bottom: 40px;
+    }
+
+    .dashboard {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      width: 280px;
+      padding: 25px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(255, 214, 10, 0.4);
+    }
+
+    .card h2 {
+      color: #ffd60a;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #ddd;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .chart {
+      height: 150px;
+      width: 100%;
+      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(255,214,10,0.2), rgba(255,214,10,0));
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Simulated moving chart lines */
+    .chart::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,0.3) 0px,
+        rgba(255,255,255,0.3) 2px,
+        transparent 2px,
+        transparent 10px
+      );
+      animation: moveLines 4s linear infinite;
+    }
+
+    @keyframes moveLines {
+      0% { left: -100%; }
+      100% { left: 0%; }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 30px;
+      background: linear-gradient(90deg, #00b4db, #0083b0);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #0083b0, #00b4db);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🚀 Trade Knocking Learning Hub</h1>
+  <p>Master <b>Crypto</b>, <b>Forex</b>, & <b>Gold</b> Trading — with real insights and strategies.</p>
+
+  <div class="dashboard">
+    <div class="card">
+      <h2>📈 Crypto Market</h2>
+      <div class="chart"></div>
+      <p>Learn technical and fundamental analysis for top crypto pairs.</p>
+    </div>
+
+    <div class="card">
+      <h2>💱 Forex Strategies</h2>
+      <div class="chart"></div>
+      <p>Understand price action, indicators, and real-world forex setups.</p>
+    </div>
+
+    <div class="card">
+      <h2>🥇 Gold Trading</h2>
+      <div class="chart"></div>
+      <p>Master risk management and trend-based gold strategies.</p>
+    </div>
+  </div>
+
+  <a href="index.html" class="btn">⬅ Back to Home</a>
+</body>
+</html>
