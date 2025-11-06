@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trade Knocking</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: radial-gradient(circle at top left, #0a0f24, #111633, #000);
+      background-color: #0a0f24;
       color: white;
       overflow-x: hidden;
     }
@@ -17,47 +16,19 @@
     header {
       text-align: center;
       padding: 80px 20px 40px;
+      background: #0f1430;
     }
 
     header h1 {
-      font-size: 3rem;
-      background: linear-gradient(90deg, #ffcc00, #ff8800);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 15px #ffb300; }
-      to { text-shadow: 0 0 30px #ffaa00; }
+      font-size: 2.8rem;
+      color: #ffcc00;
+      margin-bottom: 10px;
     }
 
     header h3 {
       font-size: 1.2rem;
       color: #aaa;
-      margin-top: 10px;
     }
-
-    .hero-animation {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .floating-icon {
-      position: absolute;
-      width: 60px;
-      opacity: 0.8;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-25px); }
-    }
-
-    .icon-btc { left: 20%; top: 20%; animation-delay: 0s; }
-    .icon-gold { right: 25%; top: 30%; animation-delay: 2s; }
 
     section {
       padding: 40px 20px;
@@ -68,26 +39,25 @@
 
     .enroll-btn {
       display: inline-block;
-      background: linear-gradient(90deg, #ff8800, #ffcc00);
-      color: white;
+      background-color: #ffcc00;
+      color: #000;
       padding: 15px 40px;
       font-size: 1.2rem;
       border-radius: 50px;
       text-decoration: none;
       transition: 0.3s;
-      box-shadow: 0 0 25px rgba(255, 204, 0, 0.5);
     }
 
     .enroll-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(255, 204, 0, 0.7);
+      background-color: #ffaa00;
     }
 
     .follow-bar {
-      background: rgba(255, 204, 0, 0.1);
+      background: #111633;
       padding: 20px;
       text-align: center;
-      border-top: 1px solid rgba(255, 204, 0, 0.3);
+      border-top: 1px solid #ffcc00;
+      color: #ffcc00;
     }
 
     .follow-bar a {
@@ -134,10 +104,6 @@
   <header>
     <h1>Trade Knocking</h1>
     <h3>BTC · Gold · Forex</h3>
-    <div class="hero-animation">
-      <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="floating-icon icon-btc" alt="Bitcoin">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Gold_bar_icon.svg" class="floating-icon icon-gold" alt="Gold">
-    </div>
   </header>
 
   <section>
@@ -168,4 +134,3 @@
   </footer>
 </body>
 </html>
-
