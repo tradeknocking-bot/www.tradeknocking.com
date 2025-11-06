@@ -1,311 +1,170 @@
-<!doctype html>
-<html lang="mr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Trade Knocking — BTC · Crypto · Gold Trading (1 Month)</title>
-  <meta name="description" content="Trade Knocking - 1 Month Live Zoom Batch for BTC, Crypto & Gold. Live trades, risk management, strategies."/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade Knocking</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Theme colors */
-    :root{
-      --navy:#0b1120;       /* deep navy */
-      --green:#00c16a;      /* growth/crypto */
-      --gold:#f5b301;       /* wealth/gold */
-      --sky:#1e90ff;        /* tech accent */
-      --muted:#9fb2c7;
-      --card:#071127;
-      --glass: rgba(255,255,255,0.03);
-      --radius:14px;
-      --maxw:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial;
-      background:var(--navy);
-      color: #eaf4ff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      display:flex;
-      justify-content:center;
-      padding:28px 18px;
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: radial-gradient(circle at top left, #0a0f24, #111633, #000);
+      color: white;
+      overflow-x: hidden;
     }
 
-    /* container */
-    .wrap{width:100%;max-width:var(--maxw);}
-
-    /* Background hero image */
-    .hero-wrap{
-      position:relative;
-      border-radius:18px;
-      overflow:hidden;
-      min-height:360px;
-      display:flex;
-      align-items:center;
-      background:linear-gradient(180deg, rgba(6,10,18,0.64), rgba(4,8,14,0.78));
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
     }
-    .hero-bg{
-      position:absolute; inset:0; z-index:0;
-      background-image: url('https://cdn.pixabay.com/photo/2017/08/10/03/56/chart-2616936_1280.jpg');
-      background-size:cover; background-position:center center;
-      filter: contrast(0.9) saturate(1.05) blur(4px) brightness(0.6);
-      transform:scale(1.02);
+
+    header h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #ffcc00, #ff8800);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
     }
-    .hero-overlay{ position:absolute; inset:0; background:linear-gradient(90deg, rgba(2,6,12,0.35), rgba(2,6,12,0.55)); z-index:1;}
 
-    .hero{
-      position:relative; z-index:2;
-      display:flex; gap:28px; align-items:center;
-      padding:38px;
-      width:100%;
+    @keyframes glow {
+      from { text-shadow: 0 0 15px #ffb300; }
+      to { text-shadow: 0 0 30px #ffaa00; }
     }
-    .hero-left{flex:1; min-width:260px;}
-    .brand{
-      display:flex; align-items:center; gap:12px; margin-bottom:6px;
+
+    header h3 {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 10px;
     }
-    .logo{
-      width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--green),var(--sky));
-      display:flex;align-items:center;justify-content:center;font-weight:800;color:#021012;font-size:18px;box-shadow:0 8px 30px rgba(0,193,106,0.09);
+
+    .hero-animation {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
     }
-    h1{margin:0;font-size:28px;line-height:1.05;color:#eaf4ff}
-    .subtitle{color:var(--muted);margin-top:8px;font-size:15px}
-    .hero-ctas{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      background:linear-gradient(90deg,var(--green),var(--gold));
-      color:#021012;border:none;padding:12px 16px;border-radius:10px;font-weight:800;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,0.25);
-      transition:transform .15s ease, box-shadow .15s;
+
+    .floating-icon {
+      position: absolute;
+      width: 60px;
+      opacity: 0.8;
+      animation: float 6s ease-in-out infinite;
     }
-    .btn:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.35)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted);padding:10px 14px;border-radius:10px}
 
-    /* hero-right card */
-    .card-quick{width:320px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.04)}
-    .price{font-size:26px;font-weight:900;color:#fff}
-    .tag{color:var(--muted);font-size:13px;margin-top:6px}
-
-    /* layout */
-    .main{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-    h2.section{margin-top:0;color:var(--green);font-size:20px}
-
-    /* features / bullets */
-    .bullets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-    .bullet{
-      background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border-left:4px solid rgba(255,255,255,0.02);
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
     }
-    .bullet strong{color:var(--gold)}
-    ul.clean{padding-left:18px;margin:12px 0;color:var(--muted)}
-    ol.flow{padding-left:18px;margin:8px 0;color:var(--muted);line-height:1.6}
 
-    /* instructor */
-    .instructor{display:flex;gap:12px;align-items:center}
-    .avatar{width:68px;height:68px;border-radius:12px;background:linear-gradient(90deg,var(--sky),var(--green));display:flex;align-items:center;justify-content:center;color:#021012;font-weight:800}
+    .icon-btc { left: 20%; top: 20%; animation-delay: 0s; }
+    .icon-gold { right: 25%; top: 30%; animation-delay: 2s; }
 
-    /* contact / enroll */
-    .contact-links a{display:inline-block;margin-right:10px;margin-top:8px;text-decoration:none;color:var(--muted);font-weight:700}
-    .contact-links a.call{color:var(--green)}
+    section {
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
 
-    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px;padding-bottom:16px}
+    .enroll-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #ff8800, #ffcc00);
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 0 25px rgba(255, 204, 0, 0.5);
+    }
 
-    /* responsiveness */
-    @media(max-width:980px){
-      .main{grid-template-columns:1fr}
-      .hero{flex-direction:column}
-      .card-quick{width:100%}
-      .bullets{grid-template-columns:1fr}
+    .enroll-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 204, 0, 0.7);
+    }
+
+    .follow-bar {
+      background: rgba(255, 204, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 204, 0, 0.3);
+    }
+
+    .follow-bar a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-section {
+      background: #0d1126;
+      padding: 40px 20px;
+      border-top: 2px solid #ffcc00;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .contact-section p {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+    .contact-section img {
+      width: 22px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #000;
+      color: #777;
+      font-size: 0.9rem;
     }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-
-    <!-- HERO -->
-    <section class="hero-wrap">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-overlay" aria-hidden="true"></div>
-
-      <div class="hero">
-        <div class="hero-left">
-          <div class="brand">
-            <div class="logo">TK</div>
-            <div>
-              <div style="font-size:13px;color:var(--muted);font-weight:700">Trade Knocking</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.6)">BTC · Crypto · Gold</div>
-            </div>
-          </div>
-
-          <h1>Professional Live Trading Course — 1 Month (Mon–Fri)</h1>
-          <div class="subtitle">Live Zoom classes, real market walkthroughs, risk management, trade plans and demo practice. Designed for beginners to intermediate traders.</div>
-
-          <div class="hero-ctas">
-            <button class="btn" onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})">Enroll Now — ₹10,999</button>
-            <button class="btn-ghost" onclick="document.getElementById('flowTitle').scrollIntoView({behavior:'smooth'})">View Class Flow</button>
-          </div>
-        </div>
-
-        <div class="card-quick">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div style="font-size:12px;color:var(--muted)">Duration</div>
-              <div class="price">1 Month</div>
-              <div class="tag">Live — Monday to Friday</div>
-            </div>
-            <div style="text-align:right">
-              <div style="font-size:12px;color:var(--muted)">Seats</div>
-              <div style="font-weight:900;font-size:22px;color:var(--gold)">Limited</div>
-            </div>
-          </div>
-
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:12px 0" />
-
-          <div style="font-size:13px;color:var(--muted)">
-            <strong>Format:</strong> Live Zoom + session recordings.<br>
-            <strong>Support:</strong> WhatsApp group & email.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MAIN CONTENT -->
-    <div class="main">
-      <main>
-        <!-- ABOUT / WHAT YOU'LL LEARN -->
-        <div class="card">
-          <h2 class="section">Course Highlights</h2>
-          <div class="bullets">
-            <div class="bullet">
-              <strong>Live Trading</strong>
-              <div style="color:var(--muted);margin-top:6px">Real-time trade execution and journaling.</div>
-            </div>
-            <div class="bullet">
-              <strong>Strategy Sets</strong>
-              <div style="color:var(--muted);margin-top:6px">VWAP, EMA, SMC, Bollinger & more.</div>
-            </div>
-            <div class="bullet">
-              <strong>Risk Management</strong>
-              <div style="color:var(--muted);margin-top:6px">Position sizing, stop management & psychology.</div>
-            </div>
-            <div class="bullet">
-              <strong>Funded Account Guidance</strong>
-              <div style="color:var(--muted);margin-top:6px">How to prepare for funded exams.</div>
-            </div>
-          </div>
-
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:12px 0" />
-
-          <h3 style="color:var(--sky);margin:8px 0">What you'll learn (summary)</h3>
-          <ul class="clean">
-            <li>Market structure for Crypto, BTC, Forex & Gold</li>
-            <li>Multi-timeframe analysis & Supply/Demand zones</li>
-            <li>Entry/Exit setups, 11/51, 21 EMA, Anchored VWAP</li>
-            <li>Candles, Patterns, Fibonacci, Ichimoku, Heiken Ashi</li>
-            <li>Volume analysis (VRVP), SMI & Bollinger strategies</li>
-            <li>Develop trading plan, demo practice & funded account steps</li>
-          </ul>
-        </div>
-
-        <!-- CLASS FLOW (25 items) -->
-        <div class="card" id="flowTitle">
-          <h2 class="section">Class Flow (25 topics)</h2>
-          <ol class="flow">
-            <li>Introduction to Crypto</li>
-            <li>Introduction to Forex and Commodities</li>
-            <li>Introduction to Forex and Commodities (advanced)</li>
-            <li>Trading Hours - Market & Pre Market - Baby Pips</li>
-            <li>Supply Demand and Multiple Timeframe Analysis</li>
-            <li>Live trade execution</li>
-            <li>Candles and Patterns</li>
-            <li>Data & Importance - Forex Factory & Financial Juice</li>
-            <li>11/51 Strategy and Application</li>
-            <li>Bollinger Bands Strategy and Application</li>
-            <li>VRVP and Volume Understanding</li>
-            <li>Anchored VWAP - Use and Application, How to catch trade from between</li>
-            <li>Fibonacci - Use and Application</li>
-            <li>Ichimoku - Use and Application</li>
-            <li>Heiken Ashi Use and Application</li>
-            <li>21 EMA Strategy - Use and Application</li>
-            <li>SMC - Smart Money Concept - Indicator</li>
-            <li>Risk and Money Management - Psychology</li>
-            <li>Funded Account - Details</li>
-            <li>Live Analysis & Q&A</li>
-            <li>EMA 6,12,15</li>
-            <li>SMI - Stochastic Momentum Index</li>
-            <li>Developed Trading Plan and Strategy</li>
-            <li>Trading Psychology and Emotional Control</li>
-            <li>Practice with Demo Account</li>
-          </ol>
-        </div>
-
-        <!-- INSTRUCTOR -->
-        <div class="card">
-          <h2 class="section">About Instructor</h2>
-          <div class="instructor">
-            <div class="avatar">TK</div>
-            <div>
-              <div style="font-weight:800">Trade Knocking — Lead Trainer</div>
-              <div style="color:var(--muted);margin-top:6px">Experienced trader — Crypto, Forex & Commodities. Practical backstage market analysis and live trade coaching.</div>
-            </div>
-          </div>
-        </div>
-
-      </main>
-
-      <!-- ASIDE: ENROLL / CONTACT -->
-      <aside>
-        <div class="card" id="enroll">
-          <h2 style="margin:0 0 6px 0;color:var(--green)">Secure your seat</h2>
-          <div style="color:var(--muted);margin-bottom:10px">1 Month Live Batch — Monday to Friday</div>
-
-          <div style="display:flex;gap:10px;align-items:center">
-            <div style="font-size:20px;font-weight:900">₹10,999</div>
-            <div style="color:var(--muted);font-size:13px">One-time</div>
-          </div>
-
-          <div style="margin-top:12px">
-            <!-- Enroll button: Replace openCheckout() with your payment integration -->
-            <button class="btn" onclick="alert('Demo payment — replace with Razorpay integration')">Pay ₹10,999</button>
-            <button class="btn-ghost" style="margin-left:8px" onclick="window.location.href='https://wa.me/917083505173'">Message on WhatsApp</button>
-          </div>
-
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0" />
-
-          <div style="font-size:14px;color:var(--muted)">
-            <strong>Contact</strong>
-            <div class="contact-links">
-              <a class="call" href="https://wa.me/917083505173">WhatsApp: +91 7083505173</a><br>
-              <a href="mailto:tradeknocking@gmail.com">tradeknocking@gmail.com</a><br>
-              <a href="https://instagram.com/Trade_knocking" target="_blank">@Trade_knocking</a>
-            </div>
-          </div>
-
-          <div style="margin-top:12px;font-size:13px;color:var(--muted)">
-            <strong>Note:</strong> Payment → Zoom link & schedule will be shared after confirmation.
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <h3 style="margin:0 0 8px 0;color:var(--sky)">Quick FAQ</h3>
-          <p style="color:var(--muted);margin:6px 0"><strong>Beginner friendly?</strong><br>हो — basics पासून live execution पर्यंत सगळं cover करतो.</p>
-          <p style="color:var(--muted);margin:6px 0"><strong>Recordings?</strong><br>हो — प्रत्येक session नोंदवला जाईल आणि शेअर केला जाईल.</p>
-        </div>
-      </aside>
+  <header>
+    <h1>Trade Knocking</h1>
+    <h3>BTC · Gold · Forex</h3>
+    <div class="hero-animation">
+      <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="floating-icon icon-btc" alt="Bitcoin">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Gold_bar_icon.svg" class="floating-icon icon-gold" alt="Gold">
     </div>
+  </header>
 
-    <footer>
-      © <span id="year"></span> Trade Knocking — BTC · Crypto · Gold. Follow: <a href="https://instagram.com/Trade_knocking" target="_blank" style="color:var(--gold);text-decoration:none">@Trade_knocking</a>
-    </footer>
+  <section>
+    <h2>Professional Live Trading Course</h2>
+    <p>Learn to trade Crypto, Gold & Forex markets with confidence and precision. Develop skills that last a lifetime and become a profitable trader.</p>
+  </section>
 
+  <section id="enroll">
+    <h2>Enroll for the Complete Course</h2>
+    <p>Secure your seat in our premium trading mentorship program.</p>
+    <a href="upi://pay?pa=7083505173@ybl&pn=TradeKnocking&am=10999&cu=INR" class="enroll-btn">Enroll Now – ₹10,999</a>
+  </section>
+
+  <div class="follow-bar">
+    💬 Join us on Instagram for daily market updates — 
+    <a href="https://www.instagram.com/trade_knocking" target="_blank">@Trade_knocking</a>
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <section id="contact" class="contact-section">
+    <h2>Contact</h2>
+    <p><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp: +91 7083505173</p>
+    <p><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"> tradeknocking@gmail.com</p>
+    <p><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"> <a href="https://www.instagram.com/trade_knocking" target="_blank">@Trade_knocking</a></p>
+  </section>
 
-    /* Small accessibility: keyboard focus for ctas */
-    document.querySelectorAll('.btn, .btn-ghost').forEach(b => {
-      b.addEventListener('keydown', e => { if(e.key === 'Enter') b.click(); });
-    });
-  </script>
+  <footer>
+    © 2025 Trade Knocking | For Educational Purpose Only
+  </footer>
 </body>
 </html>
