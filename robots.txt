@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tradeknocking-bot.github.io/www.tradeknocking.com/sitemap.xml
