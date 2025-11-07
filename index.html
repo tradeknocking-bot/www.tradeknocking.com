@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Trade Knocking — BTC · Crypto · Gold Trading</title>
   <meta name="description" content="Trade Knocking - Live Zoom Batch for BTC, Crypto & Gold. Live trades, risk management, strategies."/>
+  
+  <!-- ✅ Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4QN1JSNCES"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4QN1JSNCES');
+  </script>
+
   <style>
     :root{
       --navy:#0b1120;
@@ -56,6 +66,7 @@
     @media(max-width:980px){.main{grid-template-columns:1fr}.hero{flex-direction:column}.card-quick{width:100%}.bullets{grid-template-columns:1fr}}
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <section class="hero-wrap">
@@ -96,88 +107,6 @@
       </div>
     </section>
 
-    <div class="main">
-      <main>
-        <div class="card">
-          <h2 class="section">Course Highlights</h2>
-          <div class="bullets">
-            <div class="bullet"><strong>Live Trading</strong><div style="color:var(--muted);margin-top:6px">Real-time trade execution and journaling.</div></div>
-            <div class="bullet"><strong>Strategy Sets</strong><div style="color:var(--muted);margin-top:6px">VWAP, EMA, SMC, Bollinger & more.</div></div>
-            <div class="bullet"><strong>Risk Management</strong><div style="color:var(--muted);margin-top:6px">Position sizing, stop management & psychology.</div></div>
-          </div>
-        </div>
-
-        <div class="card" id="flow" style="margin-top:14px">
-          <h2 class="section">🪙💹🏆 Class Flow (22 Topics)</h2>
-          <button id="toggleFlow" class="btn-ghost" style="margin-bottom:10px">View Full Course Flow</button>
-          <ol id="flowList" style="display:none;color:var(--muted);padding-left:18px;line-height:1.6">
-            <li>Introduction to Crypto</li>
-            <li>Introduction to Forex and Commodities</li>
-            <li>Introduction to Forex and Commodities</li>
-            <li>Trading Hours - Market & Pre Market - Baby Pips</li>
-            <li>Supply Demand and Multiple Timeframe Analysis</li>
-            <li>How to use Exness and Delta Exchange Application</li>
-            <li>Candles and Patterns</li>
-            <li>Data & Importance - Forex Factory & Financial Juice</li>
-            <li>11/51 Strategy and Application</li>
-            <li>Bollinger Bands Strategy and Application</li>
-            <li>VRVP and Volume Understanding</li>
-            <li>Anchored VWAP - Use and Application, How to catch trade from between</li>
-            <li>Fibonacci - Use and Application</li>
-            <li>Ichimoku - Use and Application</li>
-            <li>Heiken Ashi Use and Application</li>
-            <li>21 EMA Strategy - Use and Application</li>
-            <li>SMC-Smart Money Concept - Indicator</li>
-            <li>Risk and Money Management - Psychology</li>
-            <li>Funded Account - Details</li>
-            <li>Live Analysis & Q&A</li>
-            <li>EMA 6,12,15</li>
-            <li>SMI - Stochastic Momentum Index</li>
-          </ol>
-        </div>
-
-        <script>
-          const toggleBtn = document.getElementById('toggleFlow');
-          const flowList = document.getElementById('flowList');
-          toggleBtn.addEventListener('click', () => {
-            const isHidden = flowList.style.display === 'none';
-            flowList.style.display = isHidden ? 'block' : 'none';
-            toggleBtn.textContent = isHidden ? 'Hide Course Flow' : 'View Full Course Flow';
-          });
-        </script>
-
-        <div class="card" id="faq" style="margin-top:14px">
-          <h3 style="margin:0 0 8px 0;color:var(--sky)">Quick FAQ</h3>
-          <p style="color:var(--muted);margin:6px 0"><strong>Beginner friendly?</strong><br>Yes — the course covers everything from basics to live trade execution.</p>
-          <p style="color:var(--muted);margin:6px 0"><strong>Recordings?</strong><br>Yes — every session will be recorded and shared after class.</p>
-        </div>
-      </main>
-
-      <aside>
-        <div class="card" id="enroll">
-          <h2 style="margin:0 0 6px 0;color:var(--green)">Secure your seat</h2>
-          <div style="color:var(--muted);margin-bottom:10px">1 Month Live Batch — Monday to Friday</div>
-          <div style="display:flex;gap:10px;align-items:center">
-            <div style="font-size:20px;font-weight:900">₹10,999</div>
-            <div style="color:var(--muted);font-size:13px">One-time</div>
-          </div>
-          <div style="margin-top:12px">
-            <button class="btn" onclick="openUPIPayment()">Pay ₹10,999 via UPI</button>
-            <button class="btn-ghost" style="margin-left:8px" onclick="window.location.href='https://wa.me/917083505173'">Message on WhatsApp</button>
-          </div>
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0" />
-          <div style="font-size:14px;color:var(--muted)">
-            <strong>Contact</strong>
-            <div class="contact-links">
-              <a href="https://wa.me/917083505173" class="call">📱 WhatsApp: +91 7083505173</a><br>
-              <a href="mailto:tradeknocking@gmail.com">✉️ tradeknocking@gmail.com</a><br>
-              <a href="https://instagram.com/Trade_knocking" target="_blank">📸 @Trade_knocking</a>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </div>
-
     <footer>
       © <span id="year"></span> Trade Knocking — BTC · Crypto · Gold. Follow: 
       <a href="https://instagram.com/Trade_knocking" target="_blank" style="color:var(--gold);text-decoration:none">@Trade_knocking</a>
@@ -186,7 +115,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     function openUPIPayment() {
       window.location.href = "upi://pay?pa=7083505173@ybl&pn=Trade%20Knocking&am=10999&cu=INR";
     }
